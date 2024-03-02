@@ -55,17 +55,17 @@ jobs:
           repository: Vast-As-A-Sea/Journey-to-the-West-comic-series-part6
           ref: main
           path: psbook_6
-      - name: Merge Github Pages
+      - name: Merge psbook
         run: |
-          mkdir -p merge
-          rm -rf psbook_1/.git && rm psbook_1/.gitattributes && rm psbook_1/LICENSE && cp -r psbook_1/. merge/
-          rm -rf psbook_2/.git && rm psbook_2/.gitattributes && rm psbook_2/LICENSE && cp -r psbook_2/. merge/
-          rm -rf psbook_3/.git && rm psbook_3/.gitattributes && rm psbook_3/LICENSE && cp -r psbook_3/. merge/
-          rm -rf psbook_4/.git && rm psbook_4/.gitattributes && rm psbook_4/LICENSE && cp -r psbook_4/. merge/
-          rm -rf psbook_5/.git && rm psbook_5/.gitattributes && rm psbook_5/LICENSE && cp -r psbook_5/. merge/
-          rm -rf psbook_6/.git && rm psbook_6/.gitattributes && rm psbook_6/LICENSE && cp -r psbook_6/. merge/
+          mkdir -p psbook
+          rm -rf psbook_1/.git && rm psbook_1/.gitattributes && rm psbook_1/LICENSE && cp -r psbook_1/. psbook/
+          rm -rf psbook_2/.git && rm psbook_2/.gitattributes && rm psbook_2/LICENSE && cp -r psbook_2/. psbook/
+          rm -rf psbook_3/.git && rm psbook_3/.gitattributes && rm psbook_3/LICENSE && cp -r psbook_3/. psbook/
+          rm -rf psbook_4/.git && rm psbook_4/.gitattributes && rm psbook_4/LICENSE && cp -r psbook_4/. psbook/
+          rm -rf psbook_5/.git && rm psbook_5/.gitattributes && rm psbook_5/LICENSE && cp -r psbook_5/. psbook/
+          rm -rf psbook_6/.git && rm psbook_6/.gitattributes && rm psbook_6/LICENSE && cp -r psbook_6/. psbook/
       - name: Deploy Merge
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: merge
-          branch: main
+          folder: psbook
+          branch: psbook
